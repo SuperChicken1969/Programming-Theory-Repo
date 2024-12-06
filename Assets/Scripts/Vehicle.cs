@@ -15,4 +15,7 @@ public class Vehicle : MonoBehaviour
     {
         
     }
+
+    protected virtual void TurnVehicle() { }
+    protected virtual void MoveVehicle() { }
 }
