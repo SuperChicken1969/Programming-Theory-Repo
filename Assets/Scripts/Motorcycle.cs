@@ -33,7 +33,11 @@ public class Motorcycle : Vehicle
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
         steering = leaningForce;
-        
+        speed = Mathf.Round(playerRb.velocity.magnitude * 2.237f);
+        speedoText.text = speed + " MPH";
+        rpm = Mathf.Round((speed % 30) * 40) + 1200;
+        rpmText.text = rpm + " RPM";
+
         Debug.Log(transform.rotation.eulerAngles.z);
     }
 
@@ -73,9 +77,5 @@ public class Motorcycle : Vehicle
         //base.MoveVehicle();
         //Move vehicle forward
         playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
-        speed = Mathf.Round(playerRb.velocity.magnitude * 2.237f);
-        speedoText.text = speed + " MPH";
-        rpm = Mathf.Round((speed % 30) * 40) + 1200;
-        rpmText.text = rpm + " RPM";
     }
 }
