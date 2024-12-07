@@ -10,8 +10,8 @@ public class Motorcycle : Vehicle
     [SerializeField] Text speedoText;
     [SerializeField] Text rpmText;
 
-    float speed = 0f;
-    float rpm = 0f;
+    public float speed { get; private set; } = 0f;
+    public float rpm { get; private set; } = 0f;
     public float horsePower = 5f; //power
     public float steering; //how sharply verhicle turns
     public float maxLeanAngle = 30f;
