@@ -5,9 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void NewScene(int sceneIndex)
+    //changes
+    int vehicleType;
+    int sceneNumber = 0;
+
+    private void Update()
     {
-        SceneManager.LoadScene(sceneIndex);
+        sceneNumber = vehicleType;
+    }
+
+    public void SelectVehicle(int vehicleNumber)
+    {
+        vehicleType = vehicleNumber;
+    }
+    public void NewScene()
+    {
+        SceneManager.LoadScene(sceneNumber);
     }
 
     public void ExitProgram()
