@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Car : Vehicle
 {
+
+    private void Awake()
+    {
+        playerRb = GetComponent<Rigidbody>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,17 @@ public class Car : Vehicle
     // Update is called once per frame
     void Update()
     {
-        
+        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+    }
+
+    private void FixedUpdate()
+    {
+        MoveVehicle();
+    }
+
+    protected override void MoveVehicle()
+    {
+        base.MoveVehicle();
     }
 }

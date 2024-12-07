@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
+    protected Rigidbody playerRb;
+    protected float horsePower;
+    protected float verticalInput;
+    protected float horizontalInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +21,8 @@ public class Vehicle : MonoBehaviour
     }
 
     protected virtual void TurnVehicle() { }
-    protected virtual void MoveVehicle() { }
+    protected virtual void MoveVehicle() 
+    {
+        playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
+    }
 }
