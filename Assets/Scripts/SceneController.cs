@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    //changes
     int vehicleType;
     int sceneNumber = 0;
 
