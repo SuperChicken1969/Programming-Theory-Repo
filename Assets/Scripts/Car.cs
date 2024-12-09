@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Car : Vehicle
 {
-    public float speed { get; private set; } = 0f;
-    public float rpm { get; private set; } = 0f;
 
     private void Awake()
     {
@@ -24,15 +22,25 @@ public class Car : Vehicle
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        Telemotry();
     }
 
     private void FixedUpdate()
     {
         MoveVehicle();
+        if(horizontalInput != 0f)
+        {
+            TurnVehicle();
+        }
     }
 
     protected override void MoveVehicle()
     {
         base.MoveVehicle();
+    }
+
+    protected override void TurnVehicle()
+    {
+        base.TurnVehicle();
     }
 }
