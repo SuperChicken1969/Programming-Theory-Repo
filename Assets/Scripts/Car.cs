@@ -9,7 +9,7 @@ public class Car : Vehicle
     {
         playerRb = GetComponent<Rigidbody>();
         steering = 5f;
-        horsePower = 10f;
+        horsePower = 20f;
     }
     // Start is called before the first frame update
     void Start()
@@ -36,11 +36,11 @@ public class Car : Vehicle
 
     protected override void MoveVehicle()
     {
-        playerRb.AddRelativeForce(Vector3.forward * Time.deltaTime * horsePower * verticalInput);
+        playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
     }
 
     protected override void TurnVehicle()
     {
-        base.TurnVehicle();
+        transform.Rotate(Vector3.up * steering * Time.deltaTime);
     }
 }
