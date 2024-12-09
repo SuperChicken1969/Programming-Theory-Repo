@@ -16,7 +16,7 @@ public class Motorcycle : Vehicle
         playerRb = GetComponent<Rigidbody>();
         playerRb.centerOfMass = centerOfMass.transform.position;
         steering = leaningForce;
-        horsePower = 5f;
+        horsePower = 25f;
     }
 
     private void Update()
@@ -62,7 +62,6 @@ public class Motorcycle : Vehicle
 
     protected override void MoveVehicle()
     {
-        //Move vehicle forward
-        base.MoveVehicle();
+        playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
     }
 }
