@@ -8,6 +8,8 @@ public class Car : Vehicle
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody>();
+        steering = 5f;
+        horsePower = 10f;
     }
     // Start is called before the first frame update
     void Start()
@@ -20,15 +22,25 @@ public class Car : Vehicle
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        Telemotry();
     }
 
     private void FixedUpdate()
     {
         MoveVehicle();
+        if(horizontalInput != 0f)
+        {
+            TurnVehicle();
+        }
     }
 
     protected override void MoveVehicle()
     {
         base.MoveVehicle();
+    }
+
+    protected override void TurnVehicle()
+    {
+        base.TurnVehicle();
     }
 }
