@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Motorcycle.unity
     guid: c78bccf7206e4b649a53bbdf206ca593
+  - enabled: 1
+    path: Assets/Scenes/Car.unity
+    guid: 643d99d0e3f71f34db4951d47b0d5fd3
   m_configObjects: {}
