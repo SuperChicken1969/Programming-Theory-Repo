@@ -5,6 +5,11 @@ using UnityEngine;
 public class Vehicle : MonoBehaviour
 {
     protected Rigidbody playerRb;
+
+    public float speed { get; private set; } = 0f;
+    public float rpm { get; private set; } = 0f;
+    protected float steering; //how sharply verhicle turns
+
     protected float horsePower;
     protected float verticalInput;
     protected float horizontalInput;

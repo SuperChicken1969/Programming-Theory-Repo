@@ -9,12 +9,8 @@ public class Motorcycle : Vehicle
     [SerializeField] Text speedoText;
     [SerializeField] Text rpmText;
 
-    public float speed { get; private set; } = 0f;
-    public float rpm { get; private set; } = 0f;
-    public float steering; //how sharply verhicle turns
     public float maxLeanAngle = 30f;
     float leaningForce = 20f;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

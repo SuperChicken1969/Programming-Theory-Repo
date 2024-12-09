@@ -8,7 +8,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] Text speedoText;
     [SerializeField] Text rpmText;
 
-    [SerializeField] Car vehicle;
+    [SerializeField] Vehicle vehicle;
     [SerializeField] float speed;
     [SerializeField] float rpm;
     // Start is called before the first frame update
