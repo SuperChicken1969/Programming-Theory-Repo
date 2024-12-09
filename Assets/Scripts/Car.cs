@@ -36,7 +36,7 @@ public class Car : Vehicle
 
     protected override void MoveVehicle()
     {
-        base.MoveVehicle();
+        playerRb.AddRelativeForce(Vector3.forward * Time.deltaTime * horsePower * verticalInput);
     }
 
     protected override void TurnVehicle()
