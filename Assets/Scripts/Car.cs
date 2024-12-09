@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Car : Vehicle
 {
+    public float speed { get; private set; } = 0f;
+    public float rpm { get; private set; } = 0f;
+    public float steering; //how sharply verhicle turns
 
     private void Awake()
     {

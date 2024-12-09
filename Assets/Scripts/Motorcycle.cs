@@ -5,20 +5,16 @@ using UnityEngine;
 
 public class Motorcycle : Vehicle
 {
-    Rigidbody playerRb;
     [SerializeField] GameObject centerOfMass;
     [SerializeField] Text speedoText;
     [SerializeField] Text rpmText;
 
     public float speed { get; private set; } = 0f;
     public float rpm { get; private set; } = 0f;
-    public float horsePower = 5f; //power
     public float steering; //how sharply verhicle turns
     public float maxLeanAngle = 30f;
     float leaningForce = 20f;
 
-    float verticalInput;
-    float horizontalInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +22,7 @@ public class Motorcycle : Vehicle
         playerRb = GetComponent<Rigidbody>();
         playerRb.centerOfMass = centerOfMass.transform.position;
         steering = leaningForce;
+        horsePower = 5f;
     }
 
     private void Update()
@@ -74,8 +71,7 @@ public class Motorcycle : Vehicle
 
     protected override void MoveVehicle()
     {
-        //base.MoveVehicle();
         //Move vehicle forward
-        playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
+        base.MoveVehicle();
     }
 }
