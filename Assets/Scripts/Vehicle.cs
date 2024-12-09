@@ -6,8 +6,8 @@ public class Vehicle : MonoBehaviour
 {
     protected Rigidbody playerRb;
 
-    public float speed { get; private set; } = 0f;
-    public float rpm { get; private set; } = 0f;
+    public float speed { get; protected set; }
+    public float rpm { get; protected set; }
     protected float steering; //how sharply verhicle turns
 
     protected float horsePower;

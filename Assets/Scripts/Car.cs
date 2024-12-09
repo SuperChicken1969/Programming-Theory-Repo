@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Car : Vehicle
 {
+    public float speed { get; private set; } = 0f;
+    public float rpm { get; private set; } = 0f;
+
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody>();
+        steering = 5f;
+        horsePower = 10f;
     }
     // Start is called before the first frame update
     void Start()

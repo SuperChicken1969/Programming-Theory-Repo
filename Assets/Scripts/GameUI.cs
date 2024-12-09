@@ -9,8 +9,6 @@ public class GameUI : MonoBehaviour
     [SerializeField] Text rpmText;
 
     [SerializeField] Vehicle vehicle;
-    [SerializeField] float speed;
-    [SerializeField] float rpm;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +18,18 @@ public class GameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = vehicle.speed;
-        rpm = vehicle.rpm;
+        DisplaySpeed();
+        DisplayRpm();
     }
 
     void DisplaySpeed()
     {
-        speedoText.text = speed + " mph";
+
+        speedoText.text = vehicle.speed + " mph";
     }
 
     void DisplayRpm()
     {
-        rpmText.text = rpm + " rpm";
+        rpmText.text = vehicle.rpm + " rpm";
     }
 }
