@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Car : Vehicle
-{
+{                   //INHERITANCE
 
     private void Awake()
     {
@@ -22,12 +22,12 @@ public class Car : Vehicle
     {
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        Telemotry();
+        Telemotry();//ABSTRACTION
     }
 
     private void FixedUpdate()
     {
-        MoveVehicle();
+        MoveVehicle();//ABSTRACTION
         if(horizontalInput != 0f)
         {
             TurnVehicle();

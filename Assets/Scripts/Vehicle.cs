@@ -6,7 +6,7 @@ public class Vehicle : MonoBehaviour
 {
     protected Rigidbody playerRb;
 
-    public float speed { get; protected set; }
+    public float speed { get; protected set; }//ENCAPSULATION
     public float rpm { get; protected set; }
     protected float steering; //how sharply verhicle turns
 
@@ -23,7 +23,7 @@ public class Vehicle : MonoBehaviour
         playerRb.AddRelativeForce(Vector3.forward * horsePower * verticalInput);
     }
 
-    protected void Telemotry()
+    protected void Telemotry()//ABSTRACTION
     {
         speed = Mathf.Round(playerRb.velocity.magnitude * 2.237f);
         rpm = Mathf.Round((speed % 30) * 40) + 1200;

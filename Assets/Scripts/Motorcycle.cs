@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class Motorcycle : Vehicle
-{
+{                           //INHERITANCE
     [SerializeField] GameObject centerOfMass;
 
     float maxLeanAngle = 40f;
@@ -24,12 +24,12 @@ public class Motorcycle : Vehicle
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
         steering = leaningForce;
-        Telemotry();
+        Telemotry();//ABSTRACTION
     }
 
     void FixedUpdate()
     {
-        MoveVehicle();
+        MoveVehicle();//ABSTRACTION
         if(horizontalInput != 0f)
         {
             TurnVehicle();
@@ -37,7 +37,7 @@ public class Motorcycle : Vehicle
         
     }
 
-    protected override void TurnVehicle()
+    protected override void TurnVehicle()//POLYMORPHISM
     {
         //base.TurnVehicle();
 
